@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "helloer/";
+
+service MyProto {
+    rpc GiveInfo (GiveInfoRequest) returns (GiveInfoResponse);
+    rpc SayHello (HelloRequest) returns (stream HelloReply);
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string msg = 1; 
+}
+
+message GiveInfoRequest{
+
+}
+
+message GiveInfoResponse{
+    string data = 1;
+}
